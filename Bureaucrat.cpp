@@ -8,7 +8,10 @@ Bureaucrat::Bureaucrat() :_name("NO NAME") , _grade(10) {
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) :_name(name) , _grade(grade) {
 	std::cout << "Bureaucrat constructor called\n";
-	if (_grade < 1 || _grade > 150)
+	if (_grade < 1)
+		throw Bureaucrat::GradeTooLowException;
+	else if
+		throw Bureaucrat::GradeTooHighException;
 }
 
 Bureaucrat::~Bureaucrat() {
@@ -23,3 +26,11 @@ Bureaucrat & Bureaucrat::operator = (const Bureaucrat &a) {
 	_grade = a._grade;
 	return (*this);
 }
+
+const std::string & Bureaucrat::getName() const {
+	return (_name);
+};
+
+const int & Bureaucrat::getGrade() const {
+	return (_grade);
+};
