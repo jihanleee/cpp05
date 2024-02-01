@@ -1,9 +1,13 @@
 NAME = a.out
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98 -I $(INC)#-g3
 
 CC = c++
 
-SRCS = main.cpp Bureaucrat.cpp
+INC = ./headers/
+
+SRCS = \
+srcs/Bureaucrat.cpp \
+srcs/main.cpp
 
 $(NAME) : $(SRCS)
 	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
