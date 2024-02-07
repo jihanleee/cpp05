@@ -2,19 +2,19 @@
 # include <iostream>
 # include "Form.hpp"
 
-Form::Form() :_name("NO NAME") , isSigned(0), _gradeToSign(10), _gradeToExecute(10) {
+Form::Form() :_name("NO NAME") , _isSigned(0), _gradeToSign(10), _gradeToExecute(10) {
 	std::cout << "Default constructor called\n";
 }
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) :_name(name), _isSigned(0), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
 	std::cout << "Form constructor called\n";
-	if (GradeToSign < 1)
+	if (gradeToSign < 1)
 		throw GradeTooLowException();
-	else if (GradeToSign > 150)
+	else if (gradeToSign > 150)
 		throw GradeTooHighException();
-	if (GradeToExecute < 1)
+	if (gradeToExecute < 1)
 		throw GradeTooLowException();
-	else if (GradeToExecute > 150)
+	else if (gradeToExecute > 150)
 		throw GradeTooHighException();
 }
 
@@ -22,12 +22,14 @@ Form::~Form() {
 	std::cout << "Destructor called\n";
 }
 
-Form::Form(const Form &a) : _name(a.getName()), _isSigned(a.getisSigned()), _gradeToSign(a.getGradeToSign()), _gradeToExecute(a.getGradeToExecute()) {
+Form::Form(const Form &a) : _name(a.getName()), _isSigned(a.getIsSigned()), _gradeToSign(a.getGradeToSign()), _gradeToExecute(a.getGradeToExecute()) {
 	std::cout << "Copy constructor called\n";
 }
 
 Form & Form::operator = (const Form &a) {
-	_grade = a._grade;
+	_gradeToSign = a.getGradeToSign();
+	_gradeToExecute = a.getGradeToExecute();
+	_isSigned = a.getIsSigned();
 	return (*this);
 }
 
@@ -35,15 +37,15 @@ const std::string & Form::getName() const {
 	return (_name);
 }
 
-const int & Form::getIsSigned() const {
+const bool & Form::getIsSigned() const {
 	return (_isSigned);
 }
 
-const std::string & Form::gradeToSign() const {
+const int & Form::getGradeToSign() const {
 	return (_gradeToSign);
 }
 
-const std::string & Form::gradeToExecute() const {
+const int & Form::getGradeToExecute() const {
 	return (_gradeToExecute);
 }
 
@@ -59,13 +61,15 @@ const char* Form::GradeTooLowException::what() const throw() {
     return "Form::GradeTooLowException thrown\n";
 }
 
-void Form::beSigned(const Bureaucrat & b) {
-	if (b.getGrade() <= this->getGradeToSign) {
-		b.signForm();
+void Form::beSigned(Bureaucrat & b) {
+	if (b.getGrade() <= this->getGradeToSign()) {
+		_isSigned = true;
+		b.signForm(true, this->getName(), "");
 	}
-	else
+	else {
+		b.signForm(false, this->getName(), "grade is too low");
 		throw GradeTooLowException();
-
+	}
 }
 
 /*seems like increment and decrement functions are not needed*/

@@ -7,7 +7,7 @@ INC = ./headers/
 
 SRCS = \
 srcs/Bureaucrat.cpp \
-srsc/Form.cpp \
+srcs/Form.cpp \
 srcs/main.cpp
 
 $(NAME) : $(SRCS)

@@ -60,3 +60,11 @@ void Bureaucrat::decrementGrade(){
 	else
 		throw GradeTooLowException();
 }
+
+void Bureaucrat::signForm(bool isSigned, const std::string & form, const std::string & reason) {
+	if (isSigned)
+		std::cout << this->getName() << " signed " << form << std::endl; 
+	else
+		std::cout << this->getName() << " couldn't sign " << form \
+		<< " because " << reason << std::endl; 
+}

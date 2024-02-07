@@ -1,19 +1,48 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
 	try {
-		Bureaucrat mohandohan("mohandohan", 20);
-		std::cout << mohandohan << std::endl;
-		mohandohan.incrementGrade();
-		std::cout << "grade incremented :" << mohandohan<< std::endl;
-		mohandohan.decrementGrade();
-		std::cout << "grade decremented :" << mohandohan << std::endl;
-		Bureaucrat johanbohan("johanbohan", -1);
-		std::cout << johanbohan;
+		std::cout<< "\nbureaucrat declaration test block\n";
+		Bureaucrat bureauGuy("bureauGuy", 20);
 	}
 	catch (std::exception & e) {
-	/* handle exception */
 		std::cout << e.what();
 	}
+	try {
+		std::cout<< "\nform exception test block1\n";
+		Form tooHigh("tooHigh", 160, 160);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what();
+	}
+	try {
+		std::cout<< "\nform exception test block2\n";
+		Form tooLow("tooLow", 0, 0);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what();
+	}
+	try {
+		std::cout<< "\nsuccessful signature test block\n";
+		Bureaucrat bureauGuy("bureauGuy", 20);
+		Form good("goodform", 30, 30);
+
+		good.beSigned(bureauGuy);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what();
+	}
+	try {
+		std::cout<< "\nunsuccessful signature test block\n";
+		Bureaucrat bureauGuy("bureauGuy", 20);
+		Form bad("badform", 10, 10);
+
+		bad.beSigned(bureauGuy);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what();
+	}
+	std::cout << "\ntest done \n";
 	return 0;
 }

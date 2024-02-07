@@ -28,6 +28,8 @@ class Bureaucrat{
 			public:
 		virtual const char * what() const throw();
 		};
+
+		void signForm(bool isSigned, const std::string & form, const std::string & reason);
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat & b);
