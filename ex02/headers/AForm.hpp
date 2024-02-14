@@ -5,7 +5,7 @@
 # include "Bureaucrat.hpp"
 
 class AForm{
-	private:
+	protected:
 		const std::string _name;
 		bool _isSigned;
 		int _gradeToSign;
@@ -14,7 +14,7 @@ class AForm{
 		AForm();
 		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
 		AForm(const AForm &a);
-		~AForm();
+		virtual ~AForm();
 		AForm & operator = (const AForm &a);
 
     	const std::string & getName() const;

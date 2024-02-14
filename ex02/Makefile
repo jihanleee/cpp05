@@ -1,5 +1,5 @@
 NAME = a.out
-FLAGS = -Wall -Wextra -Werror -std=c++98 -I $(INC)#-g3
+FLAGS = -Wall -Wextra -Werror -std=c++98 -I $(INC) -g3
 
 CC = c++
 
@@ -7,8 +7,9 @@ INC = ./headers/
 
 SRCS = \
 srcs/Bureaucrat.cpp \
-srcs/Form.cpp \
-srcs/main.cpp
+srcs/AForm.cpp \
+srcs/main.cpp \
+srcs/PresidentialPardonForm.cpp
 
 $(NAME) : $(SRCS)
 	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
