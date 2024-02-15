@@ -3,6 +3,7 @@
 # include <string>
 # include <iostream>
 
+class AForm;
 class Bureaucrat{
 	private:
 		const std::string _name;
@@ -30,6 +31,7 @@ class Bureaucrat{
 		};
 
 		void signForm(bool isSigned, const std::string & form, const std::string & reason);
+		void executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat & b);

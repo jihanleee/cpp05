@@ -4,16 +4,11 @@
 
 int main() {
 	try {
-		std::cout<< "\nbureaucrat declaration test block\n";
+		std::cout<< "\n\nPresidentialPardonForm test block\n";
 		Bureaucrat bureauGuy("bureauGuy", 20);
-	}
-	catch (std::exception & e) {
-		std::cout << e.what();
-	}
-	try {
-		std::cout<< "\nform exception test block1\n";
-		PresidentialPardonForm ppf("ppf", 10, 20);
-		ppf.executeAction();
+		PresidentialPardonForm ppf("ppf");
+		ppf.beSigned(bureauGuy);
+		bureauGuy.executeForm(ppf);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what();

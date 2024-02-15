@@ -72,18 +72,7 @@ void AForm::beSigned(Bureaucrat & b) {
 	}
 }
 
-/*seems like increment and decrement functions are not needed*/
-/* void AForm::incrementGrade(){
-	if (_grade < 150)
-		_grade++;
-	else
-		throw GradeTooHighException();
+void AForm::execute(Bureaucrat const & executor) const {
+	std::cout << executor.getName() << " executed " << this->getName() << std::endl;
+	this->executeAction();
 }
-
-void AForm::decrementGrade(){
-	if (_grade > 1)
-		_grade--;
-	else
-		throw GradeTooLowException();
-}
- */

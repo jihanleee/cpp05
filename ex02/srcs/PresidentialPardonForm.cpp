@@ -3,21 +3,13 @@
 # include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
-	: AForm("NO NAME" , 10, 10) {
+	: AForm("NO NAME" , 25, 5) {
 	std::cout << "Default constructor called\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &name, int gradeToSign, int gradeToExecute)
-	: AForm(name, gradeToSign, gradeToExecute){
+PresidentialPardonForm::PresidentialPardonForm(const std::string &name)
+	: AForm(name, 25, 5) {
 	std::cout << "PresidentialPardonForm constructor called\n";
-	if (gradeToSign < 1)
-		throw GradeTooLowException();
-	else if (gradeToSign > 150)
-		throw GradeTooHighException();
-	if (gradeToExecute < 1)
-		throw GradeTooLowException();
-	else if (gradeToExecute > 150)
-		throw GradeTooHighException();
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
@@ -37,7 +29,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator = (const PresidentialP
 	return (*this);
 }
 
-void PresidentialPardonForm :: executeAction(){
+void PresidentialPardonForm :: executeAction() const{
 	std::cout << "meow\n";
 }
 

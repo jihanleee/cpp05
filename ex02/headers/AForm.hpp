@@ -33,7 +33,7 @@ class AForm{
 		};
 
 		void execute(Bureaucrat const & executor) const;
-		virtual void executeAction() = 0; // pure virtual function to make it an abstract class.
+		virtual void executeAction() const = 0; // pure virtual function to make it an abstract class.
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm & b);
