@@ -3,12 +3,12 @@
 # include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-	: AForm("NO NAME" , 72, 45) {
+	: AForm("RobotomyRequestForm" , 72, 45), _target("NO NAME"){
 	std::cout << "Default constructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &name)
-	: AForm(name, 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+	: AForm("RobotomyRequestForm", 72, 45), _target(target){
 	std::cout << "RobotomyRequestForm constructor called\n";
 }
 

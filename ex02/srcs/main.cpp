@@ -5,7 +5,7 @@
 int main() {
 	try {
 		std::cout<< "\n\nPresidentialPardonForm test block\n";
-		Bureaucrat bureauGuy("bureauGuy", 20);
+		Bureaucrat bureauGuy("bureauGuy", 1);
 		PresidentialPardonForm ppf("ppf");
 		ppf.beSigned(bureauGuy);
 		bureauGuy.executeForm(ppf);

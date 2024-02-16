@@ -3,12 +3,12 @@
 # include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
-	: AForm("NO NAME" , 25, 5) {
+	: AForm("PresidentialPardonForm" , 25, 5) , _target("NO NAME"){
 	std::cout << "Default constructor called\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &name)
-	: AForm(name, 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	: AForm("PresidentialPardonForm", 25, 5), _target(target){
 	std::cout << "PresidentialPardonForm constructor called\n";
 }
 
@@ -30,7 +30,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator = (const PresidentialP
 }
 
 void PresidentialPardonForm :: executeAction() const{
-	std::cout << "meow\n";
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox.\n";
 }
 
 /*seems like increment and decrement functions are not needed*/

@@ -3,12 +3,12 @@
 # include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("NO NAME" , 145, 137) {
+	: AForm("ShrubberyCreationForm" , 145, 137), _target("NO NAME"){
 	std::cout << "Default constructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name)
-	: AForm(name, 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+	: AForm("ShrubberyCreationForm", 145, 137), _target(target){
 	std::cout << "ShrubberyCreationForm constructor called\n";
 }
 
@@ -30,6 +30,8 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreati
 }
 
 void ShrubberyCreationForm :: executeAction() const{
+	std::ofstream outfile;
+
 	std::cout << "meow\n";
 }
 
