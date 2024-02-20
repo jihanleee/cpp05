@@ -2,12 +2,12 @@
 # include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("ShrubberyCreationForm" , 145, 137), _target("NO NAME"){
+	: Form("ShrubberyCreationForm" , 145, 137), _target("NO NAME"){
 	std::cout << "Default constructor called\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: AForm("ShrubberyCreationForm", 145, 137), _target(target){
+	: Form("ShrubberyCreationForm", 145, 137), _target(target){
 	std::cout << "ShrubberyCreationForm constructor called\n";
 }
 
@@ -16,7 +16,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a) 
-	: AForm(a.getName(), a.getGradeToSign(), a.getGradeToExecute()) {
+	: Form(a.getName(), a.getGradeToSign(), a.getGradeToExecute()) {
 	std::cout << "Copy constructor called\n";
 	_isSigned =  a.getIsSigned();
 }

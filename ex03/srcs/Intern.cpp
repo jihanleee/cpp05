@@ -11,21 +11,41 @@ Intern::~Intern() {
 }
 
 Intern::Intern(const Intern &a) {
+	(void)a;
 	std::cout << "Copy constructor called\n";
 }
 
 Intern & Intern::operator = (const Intern &a) {
+	(void)a;
 	return (*this);
 }
 
-AForm * makeform(std::string & formType, std::string & targetName) {
+Form * Intern::makeForm(const char * formType, const char * targetName) {
 	int i;
-	std::string formName[3] {
-		""
+	std::string formTypeArray[3] = {
+		"presidential pardon", "robotomy request", "shrubbery creation"
+	};
+
+	(void) targetName;
+	i = 0;
+	for (i = 0; i < 3; i++) {
+		if (formTypeArray[i].compare(formType) == 0)
+			break;
 	}
 
-	i = 
-	switch (formType) {
-		case 
+	switch (i) {
+		case 0:
+			return new PresidentialPardonForm(std::string(targetName));
+			break;
+		case 1:
+			return new RobotomyRequestForm(std::string(targetName));
+			break;
+		case 2:
+			return new ShrubberyCreationForm(std::string(targetName));
+			break;
+		case 3:
+			std::cout<< "no form type matches\n";
+			break;
 	}
+	return NULL;
 }

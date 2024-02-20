@@ -7,11 +7,12 @@ INC = ./headers/
 
 SRCS = \
 srcs/Bureaucrat.cpp \
-srcs/AForm.cpp \
+srcs/Form.cpp \
 srcs/main.cpp \
 srcs/PresidentialPardonForm.cpp \
 srcs/ShrubberyCreationForm.cpp \
-srcs/RobotomyRequestForm.cpp
+srcs/RobotomyRequestForm.cpp \
+srcs/Intern.cpp
 
 $(NAME) : $(SRCS)
 	$(CC) $(FLAGS) $(SRCS) -o $(NAME)

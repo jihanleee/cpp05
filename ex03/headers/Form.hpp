@@ -1,21 +1,21 @@
-#ifndef AForm_HPP
-# define AForm_HPP
+#ifndef Form_HPP
+# define Form_HPP
 # include <string>
 # include <iostream>
 # include "Bureaucrat.hpp"
 
-class AForm{
+class Form{
 	protected:
 		const std::string _name;
 		bool _isSigned;
 		int _gradeToSign;
 		int _gradeToExecute;
 	public:
-		AForm();
-		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
-		AForm(const AForm &a);
-		virtual ~AForm();
-		AForm & operator = (const AForm &a);
+		Form();
+		Form(const std::string &name, int gradeToSign, int gradeToExecute);
+		Form(const Form &a);
+		virtual ~Form();
+		Form & operator = (const Form &a);
 
     	const std::string & getName() const;
     	const bool & getIsSigned() const;
@@ -33,9 +33,9 @@ class AForm{
 		};
 
 		void execute(Bureaucrat const & executor) const;
-		virtual void executeAction() const = 0; // pure virtual function to make it an abstract class.
+		virtual void executeAction() const;
 };
 
-std::ostream& operator<<(std::ostream& out, const AForm & b);
+std::ostream& operator<<(std::ostream& out, const Form & b);
 
 #endif

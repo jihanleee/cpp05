@@ -1,12 +1,12 @@
 # include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-	: AForm("RobotomyRequestForm" , 72, 45), _target("NO NAME"){
+	: Form("RobotomyRequestForm" , 72, 45), _target("NO NAME"){
 	std::cout << "Default constructor called\n";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-	: AForm("RobotomyRequestForm", 72, 45), _target(target){
+	: Form("RobotomyRequestForm", 72, 45), _target(target){
 	std::cout << "RobotomyRequestForm constructor called\n";
 }
 
@@ -15,7 +15,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &a) 
-	: AForm(a.getName(), a.getGradeToSign(), a.getGradeToExecute()) {
+	: Form(a.getName(), a.getGradeToSign(), a.getGradeToExecute()) {
 	std::cout << "Copy constructor called\n";
 	_isSigned =  a.getIsSigned();
 }

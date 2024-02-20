@@ -4,9 +4,9 @@
 # include <iostream>
 # include <fstream>
 # include "Bureaucrat.hpp"
-# include "AForm.hpp"
+# include "Form.hpp"
 
-class ShrubberyCreationForm : public AForm{
+class ShrubberyCreationForm : public Form{
 	private:
 		std::string _target;
 	public:

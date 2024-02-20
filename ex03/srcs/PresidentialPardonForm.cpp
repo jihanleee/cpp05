@@ -3,12 +3,12 @@
 # include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
-	: AForm("PresidentialPardonForm" , 25, 5) , _target("NO NAME"){
+	: Form("PresidentialPardonForm" , 25, 5) , _target("NO NAME"){
 	std::cout << "Default constructor called\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-	: AForm("PresidentialPardonForm", 25, 5), _target(target){
+	: Form("PresidentialPardonForm", 25, 5), _target(target){
 	std::cout << "PresidentialPardonForm constructor called\n";
 }
 
@@ -17,7 +17,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &a) 
-	: AForm(a.getName(), a.getGradeToSign(), a.getGradeToExecute()) {
+	: Form(a.getName(), a.getGradeToSign(), a.getGradeToExecute()) {
 	std::cout << "Copy constructor called\n";
 	_isSigned =  a.getIsSigned();
 }

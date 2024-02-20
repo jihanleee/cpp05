@@ -1,7 +1,7 @@
 # include <string>
 # include <iostream>
 # include "Bureaucrat.hpp"
-# include "AForm.hpp"
+# include "Form.hpp"
 Bureaucrat::Bureaucrat() :_name("NO NAME") , _grade(10) {
 	std::cout << "Default constructor called\n";
 }
@@ -69,7 +69,7 @@ void Bureaucrat::signForm(bool isSigned, const std::string & form, const std::st
 		<< " because " << reason << std::endl; 
 }
 
-void Bureaucrat::executeForm(AForm const & form) {
+void Bureaucrat::executeForm(Form const & form) {
 	if (this->getGrade() <= form.getGradeToExecute()) {
 		form.execute(*this);
 	}

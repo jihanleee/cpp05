@@ -3,14 +3,18 @@
 # include <string>
 # include <iostream>
 # include "Bureaucrat.hpp"
-# include "AForm.hpp"
+# include "Form.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+
 class Intern {
 	public:
 		Intern();
 		Intern(const Intern &a);
 		~Intern();
 		Intern & operator = (const Intern &a);
-		AForm * makeform(std::string & formType, std::string & targetName);
+		Form * makeForm(const char * formType, const char * targetName);
 };
 
 
