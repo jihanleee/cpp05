@@ -35,12 +35,15 @@ Form * Intern::makeForm(const char * formType, const char * targetName) {
 
 	switch (i) {
 		case 0:
+			std::cout << "Intern creates " << formType << std::endl;
 			return new PresidentialPardonForm(std::string(targetName));
 			break;
 		case 1:
+			std::cout << "Intern creates " << formType << std::endl;
 			return new RobotomyRequestForm(std::string(targetName));
 			break;
 		case 2:
+			std::cout << "Intern creates " << formType << std::endl;
 			return new ShrubberyCreationForm(std::string(targetName));
 			break;
 		case 3:
